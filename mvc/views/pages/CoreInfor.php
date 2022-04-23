@@ -35,9 +35,10 @@ for ($i = 0; $i < sizeof($data["farmArr"]); $i++) {
             <i class="fas fa-pencil-alt"></i>
         </div>
         
-        <form action="/ourfarm/dashboard/overview" id="overViewForm">
+        <form action="/ourfarm/chart" id="overViewForm">
             <button class="PageButton" id="overViewButton">Overview</button>
         </form>
+        
         <div id="dashDiv">
             <div>
                 <p class="nameInfor">Luminosity</p>
