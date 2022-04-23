@@ -1,0 +1,106 @@
+#coreH3{
+    width:100%; 
+    text-align:center; 
+    border-bottom: 1px solid rgb(235, 230, 230);
+    line-height:0.1em; 
+}
+.textInHorizon{
+    background:#fff; padding:0 10px;
+}
+
+#overViewButton{
+    display: block;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: #17B484;
+    border: none;
+    color: white;
+    width: 90px;
+    height: 30px;
+    border-radius: 5%;
+}
+#dashDiv{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+#dashDiv > div{
+    border: 2px solid rgb(235, 230, 230);
+    width: 30%;
+    text-align: center;
+    border-radius: 3%;
+}
+.nameInfor{
+    opacity: 0.5;
+    font-size: 14px;
+}
+.infor{
+    font-size: 20px;
+}
+#farmFunc{
+    margin-left: 25px;
+    margin-top: 5px;
+}
+#farmFunc i{
+    border: 2px solid rgb(235, 230, 230);
+    border-radius: 50%;
+    padding: 3px;
+    margin-left: 2px;
+}
+#farmSelect{
+    margin-left: 22px;
+}
+#addFarm label{
+    display: block;
+    margin-bottom: 15px;
+}
+#addFarm{
+    display: none;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    padding-top: 200px;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+#formFarm{
+    background-color: whitesmoke;
+    width: 400px;
+    margin: auto;
+    text-align: end;
+    padding: 1px 30px 20px 20px;
+    border-radius: 3px;
+}
+#formFarm h3{
+    text-align: center;
+    margin-top: 15px;
+    border-bottom: 1px solid rgb(235, 230, 230);
+}
+#formFarm input{
+    width: 60%;
+    height: 25px;
+}
+#formFarm #saveButton{
+    background-color: #17B484;
+    border: 1px solid rgb(153, 149, 149);
+    color: white;
+    border-radius: 4px;
+    width: 50px;
+}
+#formFarm #cancelButton{
+    color: red;
+    border: 1px solid rgb(153, 149, 149);
+    border-radius: 4px;
+    width: 50px;
+    background-color: white;
+}
+#formFarm i{
+    border: 2px solid rgb(235, 230, 230);
+    border-radius: 50%;
+    padding: 3px;
+    margin-top: 5px;
+    margin-right: -20px;
+}
