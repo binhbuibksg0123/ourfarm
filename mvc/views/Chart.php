@@ -1,47 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Dashboard OurFarm</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/ourfarm/public/css/MasterLayout.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overview</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-</head>
 
-<body>
-    <div id="mainContent">
-        <main>
-
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-        </main>
-    </div>
-
-    <script>
-        //draw chart
-        var xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-        var yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
-
-        new Chart("myChart", {
-            type: "line",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    fill: false,
-                    lineTension: 0,
-                    backgroundColor: "rgba(0,0,255,1.0)",
-                    borderColor: "rgba(0,0,255,0.1)",
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: { display: false },
-                scales: {
-                    yAxes: [{ ticks: { min: 6, max: 16 } }],
-                }
-            }
-        });
-    </script>
-</body>
-
+    </head>
+    <body>
+        <div class="navClass">
+            <div class="logo">
+                <img src="/ourfarm/public/img/avt.jpg">
+                <h1><span>our</span>Farm</h1>
+            </div>
+            <form action="/ourfarm/dashboard">
+                <button class="navButton"><i class="fas fa-tachometer-alt"></i>Dashboard</button>
+            </form>
+            <form action="/ourfarm/device">
+                <button class="navButton"><i class="fa fa-microchip" aria-hidden="true"></i>Device</button>
+            </form>
+            <form action="#">
+                <button class="navButton"><i class="fas fa-tasks"></i>Task</button>
+            </form>
+            <form action="#">
+                <button class="navButton"><i class="fa fa-calculator" aria-hidden="true"></i>
+                    Recipe</button>
+            </form>
+            <form action="#">
+                <button class="navButton"><i class="fas fa-leaf"></i>Crop</button>
+            </form>
+            <form action="#">
+                <button class="navButton"><i class="fas fa-comments-dollar"></i>Profit/Loss</button>
+            </form>
+            <form action="#">
+                <button class="navButton"><i class="fas fa-user"></i>Users</button>
+            </form>
+        </div>
+        <div class="mainClass">
+            <header>
+                <h2><i class="fas fa-indent"></i>Hello</h2>
+            </header>
+            <main>
+                <?php require_once "./mvc/views/pages/".$data["Page"].".php" ?>
+            </main>
+            <footer>
+                <sub>Copyright <i class="fas fa-copyright"></i> Socialism Team / ourFarm</sub>
+            </footer>
+        </div>
+    </body>
 </html>
