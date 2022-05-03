@@ -26,13 +26,14 @@
                         "recipe" => $this->recipe,
                         "temp" => $this->temp 
             ]);
-            echo $this->humid;
+            // echo $this->humid;
         }
 
         function getDataFromFeed($feed = "ourfarm-humid")
         {
-            $api_url = "https://io.adafruit.com/api/v2/binhbuibksg0123/feeds/{$feed}/data?X-AIO-Key=aio_fHuR31Pi9nfgXdE2wD7VOR5GYAld";
-            return file_get_contents($api_url);
+            $key = "aio_rdEI84gFOrrjMKB71lqP8BEdnB1V";
+            $api_url = "https://io.adafruit.com/api/v2/binhbuibksg0123/feeds/{$feed}/data?X-AIO-Key={$key}";
+            return json_decode(file_get_contents($api_url), true);
         }
     }
 ?>
