@@ -13,19 +13,19 @@
         <h3 id="coreH3"><span class="textInHorizon">CORE INFORMATION</span></h3>
         <select id="farmSelect" onchange="changeFarm()">
             <?php
-            for ($i = 0;$i<sizeof($data["farmArr"]);$i++){
-                if($data["farmArr"][$i]["farm_name"]==$_SESSION["farmName"])
-                echo "<option value=\"".$i."\">
-                ".$data["farmArr"][$i]["farm_name"]."
+for ($i = 0; $i < sizeof($data["farmArr"]); $i++) {
+    if ($data["farmArr"][$i]["farm_name"] == $_SESSION["farmName"])
+        echo "<option value=\"" . $i . "\">
+                " . $data["farmArr"][$i]["farm_name"] . "
             </option>";
-            }
-            for ($i = 0;$i<sizeof($data["farmArr"]);$i++){
-                if($data["farmArr"][$i]["farm_name"]!=$_SESSION["farmName"])
-                echo "<option value=\"".$i."\">
-                ".$data["farmArr"][$i]["farm_name"]."
+}
+for ($i = 0; $i < sizeof($data["farmArr"]); $i++) {
+    if ($data["farmArr"][$i]["farm_name"] != $_SESSION["farmName"])
+        echo "<option value=\"" . $i . "\">
+                " . $data["farmArr"][$i]["farm_name"] . "
             </option>";
-            }
-            ?>
+}
+?>
         </select>
         <sub>as at Aug 16,2020,7:47:42 PM</sub>
         <br>
@@ -35,9 +35,10 @@
             <i class="fas fa-pencil-alt"></i>
         </div>
         
-        <form action="#" id="overViewForm">
+        <form action="/ourfarm/chart" id="overViewForm">
             <button class="PageButton" id="overViewButton">Overview</button>
         </form>
+        
         <div id="dashDiv">
             <div>
                 <p class="nameInfor">Luminosity</p>
@@ -53,6 +54,8 @@
             </div>
         </div>
         <!--server,port,username,pass,farmName-->
+        
+        
         <div id="addFarm">
             
             <div id="formFarm">
@@ -82,7 +85,7 @@
         </div>
 
         <script>
-            <?php $session_value=(isset($_SESSION['farmName']))?$_SESSION['farmName']:''; ?>
+            <?php $session_value = (isset($_SESSION['farmName'])) ? $_SESSION['farmName'] : ''; ?>
             $('#farmSelect').change(function(){
                 var farmIndex = $(this).find(':selected').attr('value');
                 $.ajax({
@@ -95,7 +98,7 @@
             $(document).ready(function(){
                 
                 var farmInfo = <?php echo json_encode($data["farmArr"]); ?>;
-                var sessionValue = '<?php echo $session_value;?>'
+                var sessionValue = '<?php echo $session_value; ?>'
                 if(sessionValue != ''){
                     for (let i = 0;i<farmInfo.length;i++){
                         if(farmInfo[i].farm_name == sessionValue) {
@@ -173,8 +176,8 @@
                 // Once a connection has been made, make a subscription and send a message.
                 connected_flag=1;
                 console.log("on Connect "+connected_flag);
-                var session = '<?php echo $_SESSION["farmName"];?>';
-                var deviceArr = <?php echo json_encode($data["deviceArr"]);?>;
+                var session = '<?php echo $_SESSION["farmName"]; ?>';
+                var deviceArr = <?php echo json_encode($data["deviceArr"]); ?>;
                 feedInfo = {};
                 for(var i = 0;i<deviceArr.length;i++){
                     if(deviceArr[i].farm_name == session && deviceArr[i].dashboard_view == 1){
@@ -277,6 +280,9 @@
                 console.log("Subscribing to topic ="+feedId);
                 mqtt.subscribe(feedId);
 	        }
+
+            
+
         </script>
         </div>
     </body>
