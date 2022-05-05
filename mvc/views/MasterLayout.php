@@ -25,7 +25,7 @@
             <form action="#">
                 <button class="navButton"><i class="fas fa-tasks"></i>Task</button>
             </form>
-            <form action="#">
+            <form action="/ourfarm/recipe">
                 <button class="navButton"><i class="fa fa-calculator" aria-hidden="true"></i>
                     Recipe</button>
             </form>
