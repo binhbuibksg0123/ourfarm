@@ -5,11 +5,11 @@ import  sys
 from  Adafruit_IO import  MQTTClient
 # php_flag display_startup_errors on
 # php_flag display_errors on
-AIO_FEED_IDS = ["bbc-led"]
+AIO_FEED_IDS = ["bbc-led","ourfarm-recipe"]
 
 
 AIO_USERNAME = "binhbuibksg0123"
-AIO_KEY = "aio_rpEM21kDpSeH53QWMiDLYXqiIH5U"
+AIO_KEY = "aio_fHuR31Pi9nfgXdE2wD7VOR5GYAld"
 
 def  connected(client):
     print("Ket noi thanh cong...")
@@ -24,7 +24,7 @@ def  disconnected(client):
     sys.exit (1)
 
 def  message(client , feed_id , payload):
-    print("Nhan du lieu: " + payload)
+    print("Nhan du lieu: " + payload + feed_id)
     if isMicrobitConnected:
         ser.write((str(payload) + "#").encode())
 
@@ -81,10 +81,10 @@ while True:
     value = random . randint (0 , 100)
     print ("Cap nhat humid:", value )
     client.publish ("ourfarm-humid", value )
-    time . sleep (2)
+    time . sleep (3)
     print ("Cap nhat lumi:", value )
     client.publish ("ourfarm-lumi", value - 1)
-    time . sleep (2)
+    time . sleep (3)
     print ("Cap nhat temp:", value )
     client.publish ("ourfarm-temp", value - 2)
-    time . sleep (2)
+    time . sleep (3)
